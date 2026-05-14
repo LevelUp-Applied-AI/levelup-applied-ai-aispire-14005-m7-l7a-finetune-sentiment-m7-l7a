@@ -1,0 +1,34 @@
+id,hypothesis_category,text,expected_label,rationale,predicted_label,predicted_probability,correct
+1,negation,The latest update did not improve battery life at all.,negative,Tests whether the model picks up the negation cue or just the trigger word 'improve',negative,0.6638662815093994,True
+2,lexical_trigger,This app is no longer reliable on my phone.,negative,Strong positive cue 'reliable' negated by 'no longer'; tests cue-vs-context handling,negative,0.8148097991943359,True
+3,domain_shift,The team won the championship final last weekend.,neutral,Sports content unrelated to app-review training; tests domain-shift robustness,negative,0.42406097054481506,False
+4,negation,The update didn't exactly make the app any less confusing.,negative,Tests if the model is fooled by 'didn't' and 'less' into thinking the sentiment is positive.,negative,0.4626316428184509,True
+5,negation,I can't say that I'm not disappointed with the new UI.,negative,Uses double negation ('can't say' + 'not disappointed') to see if the model picks up the underlying negative sentiment.,neutral,0.5448405146598816,False
+6,negation,The performance never fails to be anything but mediocre.,negative,Uses 'never fails' followed by a negative descriptor to test complex negation handling.,neutral,0.6405916810035706,False
+7,lexical_trigger,This was a masterclass in how to build a terrible interface.,negative,Contains the positive trigger 'masterclass' in a context that is fundamentally negative.,negative,0.8000239729881287,True
+8,lexical_trigger,"While the support was excellent, the product itself is unusable.",negative,Tests if the strong positive 'excellent' outweighs the final 'unusable' prediction.,neutral,0.5297166109085083,False
+9,lexical_trigger,It’s a perfect example of a complete disaster.,negative,Uses 'perfect' as a trigger to see if the model ignores the negative noun 'disaster'.,positive,0.7501143217086792,False
+10,domain_shift,The team played a 4-4-2 formation and focused on long balls.,neutral,Tests the model on sports commentary which has no inherent app-review sentiment.,neutral,0.48703619837760925,True
+11,domain_shift,Add two tablespoons of olive oil to the pan and heat slowly.,neutral,Tests if a cooking recipe is correctly classified as neutral/no-sentiment.,neutral,0.5406184792518616,True
+12,domain_shift,The central bank decided to keep interest rates unchanged this quarter.,neutral,Tests financial news prose to see if the model stays neutral outside its training domain.,negative,0.5022242665290833,False
+13,length_extreme,Fix it.,negative,Extremely short command to see if the model can infer sentiment from two words.,negative,0.4816948473453522,True
+14,length_extreme,The app works but the UI is old and the buttons are small and the colors are ugly and the font is hard to read and it crashes often and I hate it.,negative,"A long, repetitive sentence to see if the model maintains focus on the sentiment until the end.",neutral,0.4701615869998932,False
+15,length_extreme,Wow.,positive,Single word exclamation to test if the model can handle minimal input.,positive,0.4889465868473053,True
+16,sarcasm,"Great, another bug to spend my entire weekend fixing.",negative,Uses 'Great' sarcastically to see if the model detects the frustration.,positive,0.73994380235672,False
+17,sarcasm,I really love waiting ten minutes for the login screen to load.,negative,The word 'love' is used to describe a negative experience (long wait times).,positive,0.7347275614738464,False
+18,sarcasm,"Thanks for deleting all my data with the last update, very helpful.",negative,Uses 'helpful' sarcastically to describe a catastrophic failure.,positive,0.7312804460525513,False
+19,negation,"It is not that the app is bad, it is just not good.",negative,Tests the nuance between 'not bad' and 'not good'.,negative,0.7373405694961548,True
+20,lexical_trigger,The only thing reliable about this app is how consistently it crashes.,negative,Uses 'reliable' to describe a negative behavior (crashing).,neutral,0.4870685935020447,False
+21,domain_shift,The photosynthesis process converts light energy into chemical energy.,neutral,Scientific fact to check for domain-shift handling.,neutral,0.4787479341030121,True
+22,length_extreme,A masterpiece of engineering that simplifies every complex task I face daily.,positive,"Testing a long, purely positive sentence to ensure no 'length' bias.",positive,0.8094853758811951,True
+23,sarcasm,The UI is so intuitive that I only needed a 50-page manual to find the exit button.,negative,Sarcastic use of 'intuitive' to describe a confusing interface.,positive,0.5080574750900269,False
+24,other,"I used to love this app, but now I find it quite frustrating.",negative,Testing 'Temporal Shift' (Past vs. Present) to see if the model recognizes the current sentiment.,neutral,0.5322655439376831,False
+25,other,"The interface is okay, but the features are lacking.",negative,Testing 'Comparative Sentiment' where one part is neutral and the other is negative.,neutral,0.717534065246582,False
+26,other,This is the best worst app I have ever used.,negative,Oxymoron test ('best worst') to see which word the model prioritizes.,negative,0.9097633957862854,True
+27,negation,No one should ever avoid using this amazing tool.,positive,Uses 'No one' and 'avoid' (double negative) to praise the tool.,negative,0.5405333042144775,False
+28,lexical_trigger,The stability is an absolute joke.,negative,Positive trigger 'absolute' used to emphasize a negative noun 'joke'.,neutral,0.5202853679656982,False
+29,domain_shift,The movie's plot was predictable and the acting was subpar.,negative,Testing sentiment in a different domain (film review) to see if it generalizes.,neutral,0.5407093167304993,False
+30,length_extreme,Okay.,neutral,Neutral short response.,neutral,0.7094467878341675,True
+31,sarcasm,"Oh, I'm sure the developers worked really 'hard' on this broken feature.",negative,Uses quotation marks and sarcasm to imply lack of effort.,negative,0.6291436553001404,True
+32,negation,The app did not disappoint at all.,positive,Tests if 'did not' + 'disappoint' is correctly seen as positive.,negative,0.7984466552734375,False
+33,lexical_trigger,A total failure of an otherwise brilliant concept.,negative,Positive trigger 'brilliant' vs. negative 'failure'.,negative,0.4913370907306671,True
